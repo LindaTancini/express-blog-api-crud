@@ -13,3 +13,11 @@ module.exports = router;
 router.get("/", (req, res) => {
   res.json(postsArray);
 });
+// SHOW -> visualizzo un solo post
+router.get("/:id", (req, res) => {
+  const currentPostId = req.params.id;
+  const currentPost = postsArray.find(
+    (element) => element.id === parseInt(currentPostId)
+  );
+  res.json(currentPost);
+});

@@ -6,3 +6,10 @@ const router = express.Router();
 const postsArray = require("../data/posts.js");
 //ESPORTO IL ROUTER
 module.exports = router;
+
+// CRUD
+
+// INDEX -> visualizzo tutti i posts
+router.get("/", (req, res) => {
+  res.json(postsArray);
+});

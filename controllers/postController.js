@@ -49,5 +49,9 @@ function destroy(req, res) {
   res.send(deletePost);
 }
 
+// CREO UN POSTO POST, CREO FUNZIONE STORE
+function store(req, res) {
+  res.send("Aggiungo un post");
+}
 // ESPORTO LE FUNZIONI
-module.exports = { index, show, destroy };
+module.exports = { index, show, destroy, store };

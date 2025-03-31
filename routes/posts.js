@@ -16,3 +16,5 @@ router.get("/:id", postControlls.show);
 router.delete("/:id", postControlls.destroy);
 // STORE -> creo un nuovo post
 router.post("/", postControlls.store);
+// UPDATE -> modifico un post esistente
+router.put("/:id", postControlls.update);

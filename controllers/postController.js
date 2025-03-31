@@ -70,5 +70,9 @@ function store(req, res) {
   // RESTITUISCO LA STATUS ADEGUATO
   res.status(201).json(newPost);
 }
+// MODIFICO UN POST, CREO FUNZIONE UPDATE
+function update(req, res) {
+  res.send("Modifico un post");
+}
 // ESPORTO LE FUNZIONI
-module.exports = { index, show, destroy, store };
+module.exports = { index, show, destroy, store, update };

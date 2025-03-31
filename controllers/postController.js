@@ -72,7 +72,26 @@ function store(req, res) {
 }
 // MODIFICO UN POST, CREO FUNZIONE UPDATE
 function update(req, res) {
-  res.send("Modifico un post");
+  const currentPostId = req.params.id;
+  const modifyPost = postsArray.find(
+    (element) => element.id === parseInt(currentPostId)
+  );
+  // CONTROLLO SE L'ID ESISTE
+  if (!modifyPost) {
+    return res.status(404).json({
+      error: "Not Found",
+      message: "Post non trovato",
+    });
+  }
+  // AGGIORNO I POST
+  modifyPost.title = req.body.title;
+  modifyPost.content = req.body.content;
+  modifyPost.image = req.body.image;
+  modifyPost.tags = req.body.tags;
+  // CON CONSOLE.LOG CONTROLLO LA LISTA AGGIORNATA
+  console.log(modifyPost);
+  // POST MODIFICATO
+  res.json(modifyPost);
 }
 // ESPORTO LE FUNZIONI
 module.exports = { index, show, destroy, store, update };

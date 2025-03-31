@@ -1,4 +1,5 @@
 // IMPORTO L'ARRAY CON I POSTS
+const posts = require("../data/posts.js");
 const postsArray = require("../data/posts.js");
 
 // OTTENGO TUTTI I POST, CREO FUNZIONE INDEX
@@ -51,10 +52,23 @@ function destroy(req, res) {
 
 // CREO UN POSTO POST, CREO FUNZIONE STORE
 function store(req, res) {
-  res.send("Aggiungo un post");
   console.log(req.body);
   // CREO UN NUOVO ID PER IL POST INCREMENTANDO L'ULTIMO ID
   const newId = posts[posts.length - 1].id + 1;
+  // CREO UN NUOVO POST
+  const newPost = {
+    id: newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tags,
+  };
+  // AGGIUNGO IL NUOVO POST CON PUSH
+  posts.push(newPost);
+  // CONTROLLO CHE TUTTO FUNZIONI CON CONSOLE.LOG
+  console.log(posts);
+  // RESTITUISCO LA STATUS ADEGUATO
+  res.status(201).json(newPost);
 }
 // ESPORTO LE FUNZIONI
 module.exports = { index, show, destroy, store };

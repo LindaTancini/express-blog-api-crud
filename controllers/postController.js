@@ -53,6 +53,8 @@ function destroy(req, res) {
 function store(req, res) {
   res.send("Aggiungo un post");
   console.log(req.body);
+  // CREO UN NUOVO ID PER IL POST INCREMENTANDO L'ULTIMO ID
+  const newId = posts[posts.length - 1].id + 1;
 }
 // ESPORTO LE FUNZIONI
 module.exports = { index, show, destroy, store };

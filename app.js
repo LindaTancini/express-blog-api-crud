@@ -4,7 +4,8 @@ const express = require("express");
 const app = express();
 // DEFINISCO LA PORTA
 const port = 3000;
-
+// REGISTRO IL BODY-PARSER
+app.use(express.json());
 // IMPORTO IL ROUTER DOVE SONO PRESENTI I POSTS
 const postsRouter = require("./routes/posts.js");
 // CON USE INDICO LE ROTTE POSTS

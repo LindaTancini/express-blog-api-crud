@@ -4,6 +4,8 @@ const postsArray = require("../data/posts.js");
 
 // OTTENGO TUTTI I POST, CREO FUNZIONE INDEX
 function index(req, res) {
+  // GENERO ERRORE 500
+  //ahia.get();
   let filteredPosts = postsArray;
   if (req.query.tag) {
     filteredPosts = postsArray.filter((element) =>
@@ -93,5 +95,6 @@ function update(req, res) {
   // POST MODIFICATO
   res.json(modifyPost);
 }
+
 // ESPORTO LE FUNZIONI
 module.exports = { index, show, destroy, store, update };

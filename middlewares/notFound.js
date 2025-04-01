@@ -5,3 +5,6 @@ function notFound(req, res, next) {
     message: "Pagina non trovata, errore!",
   });
 }
+
+// ESPORTO FUNZIONE
+module.exports = notFound;

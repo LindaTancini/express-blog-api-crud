@@ -12,8 +12,11 @@ const postsRouter = require("./routes/posts.js");
 app.use("/posts", postsRouter);
 // IMPORTO MIDDLEWARE
 const notFound = require("./middlewares/notFound.js");
+const errorHandler = require("./middlewares/errorHandler.js");
 // MIDDLEWARE 404
 app.use(notFound);
+// MIDDLEWARE 500
+app.use(errorHandler);
 
 // AVVIO IL SERVER SULLA PORTA 3000 E CONTROLLO SU POSTMAN
 app.listen(port, () => {

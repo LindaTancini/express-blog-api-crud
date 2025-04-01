@@ -10,6 +10,10 @@ app.use(express.json());
 const postsRouter = require("./routes/posts.js");
 // CON USE INDICO LE ROTTE POSTS
 app.use("/posts", postsRouter);
+// IMPORTO MIDDLEWARE
+const notFound = require("./middlewares/notFound.js");
+// MIDDLEWARE 404
+app.use(notFound);
 
 // AVVIO IL SERVER SULLA PORTA 3000 E CONTROLLO SU POSTMAN
 app.listen(port, () => {

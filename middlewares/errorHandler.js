@@ -1,4 +1,4 @@
-//CREO FUNZIONE PER ERRORE 505
+//CREO FUNZIONE PER ERRORE 500
 function errorHandler(err, req, res, next) {
   res.status(500).json({
     error: err.message,
